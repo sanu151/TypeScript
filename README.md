@@ -232,3 +232,73 @@ let color: Color = Color.Green; // An enum value
 * You can define custom types using interfaces or classes.
 
 By understanding the built-in data types in TypeScript, you can write more robust, maintainable, and expressive code.
+
+## User-Defined data type:
+
+### Union Data Types in TypeScript
+
+**Union data types** in TypeScript allow you to specify that a variable can hold values of multiple types. This provides flexibility when dealing with situations where a value might belong to one of several possible types.
+
+**Syntax:**
+
+```typescript
+type UnionType = Type1 | Type2 | ... | TypeN;
+```
+
+where:
+
+- `UnionType`: The name of the union type.
+- `Type1`, `Type2`, ..., `TypeN`: The individual types that can be represented by the union type.
+
+**Example:**
+
+```typescript
+type NumericOrString = number | string;
+
+let value: NumericOrString;
+
+value = 42; // Valid
+value = "Hello"; // Valid
+// value = true; // Invalid (not a number or string)
+```
+
+In this example, `NumericOrString` is a union type that can represent either a number or a string. The `value` variable can be assigned values of either type.
+
+**Key points about union types:**
+
+- **Type narrowing:** TypeScript's type system can perform type narrowing based on the context. For example, if you have a union type `number | string` and you know that a value of that type is actually a number, TypeScript can infer the more specific type within the context.
+- **Conditional types:** TypeScript supports conditional types, which allow you to create more complex union types based on conditions.
+- **Intersection types:** Intersection types combine the properties of multiple types, creating a new type that has all the properties of the combined types.
+
+**Example using conditional types:**
+
+```typescript
+type Nullable<T> = T | null;
+
+type NullableNumber = Nullable<number>;
+
+let maybeNumber: NullableNumber = null;
+maybeNumber = 42;
+```
+
+**Example using intersection types:**
+
+```typescript
+interface Person {
+  name: string;
+}
+
+interface Employee {
+  salary: number;
+}
+
+type PersonAndEmployee = Person & Employee;
+
+let employee: PersonAndEmployee = {
+  name: "Alice",
+  salary: 50000
+};
+```
+
+Union types are a powerful feature in TypeScript that can help you write more flexible and expressive code. By understanding how to use union types effectively, you can create more adaptable and maintainable applications.
+
