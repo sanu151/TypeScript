@@ -179,3 +179,56 @@ VS Code integrates with tsc through our integrated task runner. We can use this 
 * **`console.log(message);`**: This line logs the value of the `message` variable to the console.
 
 This simple program demonstrates the basic structure of a TypeScript file and how to use type annotations.
+
+## Built-in Data Types in TypeScript: A Deeper Dive
+
+TypeScript provides a rich set of built-in data types for representing various kinds of values. These types can be classified into two primary categories: **Primitive Types** and **Object Types**.
+
+### Primitive Types
+
+* **any:** any is a special type in TypeScript that can represent any value. It's often used when you're unsure about the type of a value or when you want to avoid strict type checking.
+* **Number:** Represents numerical values, including integers and floating-point numbers. TypeScript supports a wide range of numeric operations, such as arithmetic, comparison, and mathematical functions. You can use the `number` type to represent integers, decimals, and scientific notation.
+* **String:** Represents sequences of characters. Strings are used to store text, and TypeScript provides various methods for manipulating strings, such as concatenation, substring extraction, and case conversion.
+* **Boolean:** Represents true or false values. Boolean values are often used in conditional statements and logical expressions.
+* **Null:** Represents the absence of a value. The `null` type is often used to indicate that a variable or property is intentionally empty.
+* **Undefined:** Represents a variable that has not been assigned a value yet. The `undefined` type is often used as a default value for variables.
+* **Symbol:** Represents a unique identifier for a value. Symbols are often used as keys in objects to create private properties or avoid naming conflicts.
+
+### Object Types
+
+* **Object:** Represents a collection of key-value pairs. Objects are used to store data in a structured way. You can access and modify properties of an object using dot notation or bracket notation.
+* **Array:** Represents an ordered collection of elements. Arrays are used to store multiple values of the same type. You can access elements of an array using their index.
+* **Tuple:** Represents a fixed-length array with elements of specific types. Tuples are useful when you need to represent a sequence of values with predetermined types.
+* **Function:** Represents a function. Functions are used to perform specific tasks and can take arguments and return values.
+* **Enum:** Represents a set of named constants. Enums are often used to define a set of related values that can be easily referenced by their names.
+
+**Examples:**
+
+```typescript
+// Primitive types
+let num: number = 10.5; // A floating-point number
+let str: string = "Hello, world!"; // A string
+let bool: boolean = true; // A boolean value
+let nul: null = null; // A null value
+let undef: undefined; // An undefined value
+let sym: symbol = Symbol("unique symbol"); // A symbol
+let value: any = "Hello"; // Any data type
+value = 42;
+value = true
+
+// Object types
+let obj: object = { name: "Alice", age: 30, isStudent: true }; // An object with properties
+let arr: Array<number> = [1, 2, 3, 4, 5]; // An array of numbers
+let tuple: [string, number] = ["John", 25]; // A tuple with a string and a number
+let func: Function = () => { console.log("Hello"); }; // A function
+enum Color { Red, Green, Blue }
+let color: Color = Color.Green; // An enum value
+```
+
+**Key points to remember:**
+
+* TypeScript is a statically typed language, so you need to explicitly specify the type of variables or values.
+* You can use type inference to let TypeScript infer the type based on the initial value.
+* You can define custom types using interfaces or classes.
+
+By understanding the built-in data types in TypeScript, you can write more robust, maintainable, and expressive code.
