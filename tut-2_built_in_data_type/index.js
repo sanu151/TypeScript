@@ -1,0 +1,13 @@
+var value = "Sanu";
+console.log("value : ".concat(value));
+value = 37;
+var num = 98.3;
+var str = "Supriyo Das";
+var bool = true;
+var nul = null;
+var und;
+console.log("num : ".concat(num));
+console.log("str : ".concat(str));
+console.log("bool : ".concat(bool));
+console.log("nul : ".concat(nul));
+console.log("und : ".concat(und));
