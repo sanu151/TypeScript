@@ -118,3 +118,64 @@ VS Code integrates with tsc through our integrated task runner. We can use this 
 
 ![image](https://github.com/user-attachments/assets/541af042-888c-4204-9852-f8c609775f25)
 
+## Creating First TypeScript Program
+
+**1. Set Up Your Development Environment:**
+
+* **Install Node.js and npm:** If you haven't already, download and install Node.js from [https://nodejs.org/en](https://nodejs.org/en). npm (Node Package Manager) is bundled with Node.js.
+* **Create a project directory:** Choose a location on your computer and create a new directory for your TypeScript project.
+
+**2. Initialize a TypeScript Project:**
+
+* **Navigate to the project directory:** Open a terminal or command prompt and navigate to the project directory.
+* **Initialize a package.json file:** Run the following command to create a `package.json` file:
+  ```bash
+  npm init -y
+  ```
+
+**3. Install TypeScript:**
+
+* **Install TypeScript globally:**
+  ```bash
+  npm install -g typescript
+  ```
+  Or, **install TypeScript locally:**
+  ```bash
+  npm install --save-dev typescript
+  ```
+
+**4. Create a TypeScript File:**
+
+* **Create a new TypeScript file:** Create a file named `index.ts` in your project directory.
+
+**5. Write Your First TypeScript Code:**
+
+* **Open the file:** Open `index.ts` in your favorite code editor.
+* **Write a simple TypeScript program:**
+  ```typescript
+  let message: string = "Hello, TypeScript!";
+  console.log(message);
+  ```
+
+**6. Compile to JavaScript:**
+
+* **Use the TypeScript compiler:** Run the following command in your terminal:
+  ```bash
+  tsc index.ts
+  ```
+  This will create a new file named `index.js` in the same directory.
+
+**7. Run the JavaScript Code:**
+
+* **Execute the generated JavaScript:** Use Node.js to run the `index.js` file:
+  ```bash
+  node index.js
+  ```
+  You should see the message "Hello, TypeScript!" printed in the console.
+
+**Explanation:**
+
+* **`let message: string = "Hello, TypeScript!";`**: This line declares a variable named `message` and assigns it the value "Hello, TypeScript!". The `: string` part indicates that the variable is of type `string`.
+* **`console.log(message);`**: This line logs the value of the `message` variable to the console.
+
+This simple program demonstrates the basic structure of a TypeScript file and how to use type annotations.
