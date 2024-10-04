@@ -302,7 +302,7 @@ let employee: PersonAndEmployee = {
 
 Union types are a powerful feature in TypeScript that can help you write more flexible and expressive code. By understanding how to use union types effectively, you can create more adaptable and maintainable applications.
 
-## Array Data Type in TypeScript
+### Array Data Type in TypeScript
 
 **Arrays** in TypeScript are ordered collections of elements. They can hold elements of the same type or a union of types.
 
@@ -384,3 +384,65 @@ console.log(squaredNumbers);
 ```
 
 By understanding the array data type and its methods, you can effectively work with collections of elements in your TypeScript applications.
+
+### Tuple Data Type in TypeScript
+
+**Tuples** in TypeScript are fixed-length arrays with elements of specific types. They provide a way to define a sequence of values with predetermined types, making your code more type-safe and readable.
+
+**Syntax:**
+
+```typescript
+let tupleName: [Type1, Type2, ...] = [value1, value2, ...];
+```
+
+where:
+
+- `tupleName`: The name of the tuple.
+- `Type1`, `Type2`, ...: The types of the elements in the tuple.
+- `value1`, `value2`, ...: The initial values of the elements in the tuple.
+
+**Example:**
+
+```typescript
+let person: [string, number] = ["Alice", 30];
+```
+
+In this example, `person` is a tuple with two elements: a string representing the name and a number representing the age.
+
+**Accessing Elements:**
+
+You can access elements of a tuple using their index, just like with arrays.
+
+```typescript
+console.log(person[0]); // Output: "Alice"
+console.log(person[1]); // Output: 30
+```
+
+**Modifying Elements:**
+
+You can modify elements of a tuple by assigning new values to their corresponding indices. However, you cannot change the length of a tuple after it's created.
+
+```typescript
+person[1] = 31;
+console.log(person); // Output: ["Alice", 31]
+```
+
+**Key Points:**
+
+- Tuples are useful for representing fixed-length sequences of values with specific types.
+- Tuples are more specific than arrays, which can contain elements of any type.
+- Once a tuple is created, its length cannot be changed.
+
+**Example with mixed types:**
+
+```typescript
+let mixedTuple: [string, number, boolean] = ["Bob", 25, true];
+```
+
+**Example with optional elements:**
+
+```typescript
+let optionalTuple: [string, number?] = ["Charlie"]; // Optional second element
+```
+
+By using tuples in your TypeScript code, you can improve type safety and readability, especially when working with fixed-length sequences of values.
