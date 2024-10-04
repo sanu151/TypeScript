@@ -446,3 +446,78 @@ let optionalTuple: [string, number?] = ["Charlie"]; // Optional second element
 ```
 
 By using tuples in your TypeScript code, you can improve type safety and readability, especially when working with fixed-length sequences of values.
+
+## Enum Data Type in TypeScript
+
+**Enums** (enumerations) in TypeScript are a way to define a set of named constants. They are often used to represent a fixed set of values that are related to each other.
+
+**Syntax:**
+
+```typescript
+enum EnumName {
+  Constant1,
+  Constant2,
+  // ...
+}
+```
+
+where:
+
+- `EnumName`: The name of the enum.
+- `Constant1`, `Constant2`, ...: The named constants within the enum.
+
+**Example:**
+
+```typescript
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+```
+
+In this example, `Color` is an enum that defines three named constants: `Red`, `Green`, and `Blue`.
+
+**Values of Enums:**
+
+By default, the values of enum members are assigned consecutive numbers starting from 0. However, you can explicitly assign values to individual members:
+
+```typescript
+enum Direction {
+  North = 1,
+  South,
+  East,
+  West
+}
+```
+
+In this case, `North` has the value 1, `South` has the value 2, and so on.
+
+**Using Enums:**
+
+You can use enum members to represent values in your code:
+
+```typescript
+let color: Color = Color.Red;
+console.log(color); // Output: 0
+```
+
+**Key Points:**
+
+- Enums provide a way to define a set of related constants.
+- Enum members have numerical values by default, but you can assign custom values.
+- Enums can be used to improve code readability and maintainability.
+
+**Example with strings:**
+
+```typescript
+enum HttpStatus {
+  OK = "OK",
+  NotFound = "Not Found",
+  InternalServerError = "Internal Server Error"
+}
+```
+
+In this example, the enum members have string values, which can be more meaningful in certain contexts.
+
+By using enums effectively, you can make your TypeScript code more organized, readable, and maintainable.
