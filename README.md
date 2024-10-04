@@ -302,3 +302,85 @@ let employee: PersonAndEmployee = {
 
 Union types are a powerful feature in TypeScript that can help you write more flexible and expressive code. By understanding how to use union types effectively, you can create more adaptable and maintainable applications.
 
+## Array Data Type in TypeScript
+
+**Arrays** in TypeScript are ordered collections of elements. They can hold elements of the same type or a union of types.
+
+**Syntax:**
+
+```typescript
+let arrayName: Type[] = [element1, element2, ...];
+```
+
+where:
+
+- `arrayName`: The name of the array.
+- `Type`: The type of elements in the array.
+- `element1`, `element2`, ...: The initial elements of the array.
+
+**Example:**
+
+```typescript
+let numbers: number[] = [1, 2, 3, 4, 5];
+let strings: string[] = ["apple", "banana", "orange"];
+let mixed: (number | string)[] = [1, "hello", 3.14, "world"];
+```
+
+**Accessing Elements:**
+
+You can access elements of an array using their index, which starts from 0.
+
+```typescript
+let fruits: string[] = ["apple", "banana", "orange"];
+console.log(fruits[0]); // Output: "apple"
+```
+
+**Modifying Elements:**
+
+You can modify elements of an array by assigning new values to their corresponding indices.
+
+```typescript
+fruits[1] = "grape";
+console.log(fruits); // Output: ["apple", "grape", "orange"]
+```
+
+**Array Methods:**
+
+TypeScript provides various methods for working with arrays, including:
+
+- **`push()`**: Adds elements to the end of an array.
+- **`pop()`**: Removes the last element from an array and returns it.
+- **`shift()`**: Removes the first element from an array and returns it.
+- **`unshift()`**: Adds elements to the beginning of an array.
+- **`slice()`**: Creates a new array containing a portion of the original array.
+- **`splice()`**: Removes or replaces elements in an array.
+- **`join()`**: Joins the elements of an array into a string.
+- **`forEach()`**: Iterates over each element in the array and performs an action.
+- **`map()`**: Creates a new array by applying a function to each element of the original array.
+- **`filter()`**: Creates a new array containing elements that meet a certain condition.
+- **`reduce()`**: Applies a function to each element of the array to reduce it to a single value.
+
+**Example using array methods:**
+
+```typescript
+let numbers: number[] = [1, 2, 3, 4, 5];
+
+// Push elements to the end
+numbers.push(6, 7);
+
+// Remove the last element
+let lastElement = numbers.pop();
+
+// Join elements into a string
+let joinedNumbers = numbers.join(", ");
+
+// Map elements to their squares
+let squaredNumbers = numbers.map((num) => num * num);
+
+console.log(numbers);
+console.log(lastElement);
+console.log(joinedNumbers);
+console.log(squaredNumbers);
+```
+
+By understanding the array data type and its methods, you can effectively work with collections of elements in your TypeScript applications.
