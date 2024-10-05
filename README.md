@@ -447,80 +447,6 @@ let optionalTuple: [string, number?] = ["Charlie"]; // Optional second element
 
 By using tuples in your TypeScript code, you can improve type safety and readability, especially when working with fixed-length sequences of values.
 
-## Enum Data Type in TypeScript
-
-**Enums** (enumerations) in TypeScript are a way to define a set of named constants. They are often used to represent a fixed set of values that are related to each other.
-
-**Syntax:**
-
-```typescript
-enum EnumName {
-  Constant1,
-  Constant2,
-  // ...
-}
-```
-
-where:
-
-- `EnumName`: The name of the enum.
-- `Constant1`, `Constant2`, ...: The named constants within the enum.
-
-**Example:**
-
-```typescript
-enum Color {
-  Red,
-  Green,
-  Blue
-}
-```
-
-In this example, `Color` is an enum that defines three named constants: `Red`, `Green`, and `Blue`.
-
-**Values of Enums:**
-
-By default, the values of enum members are assigned consecutive numbers starting from 0. However, you can explicitly assign values to individual members:
-
-```typescript
-enum Direction {
-  North = 1,
-  South,
-  East,
-  West
-}
-```
-
-In this case, `North` has the value 1, `South` has the value 2, and so on.
-
-**Using Enums:**
-
-You can use enum members to represent values in your code:
-
-```typescript
-let color: Color = Color.Red;
-console.log(color); // Output: 0
-```
-
-**Key Points:**
-
-- Enums provide a way to define a set of related constants.
-- Enum members have numerical values by default, but you can assign custom values.
-- Enums can be used to improve code readability and maintainability.
-
-**Example with strings:**
-
-```typescript
-enum HttpStatus {
-  OK = "OK",
-  NotFound = "Not Found",
-  InternalServerError = "Internal Server Error"
-}
-```
-
-In this example, the enum members have string values, which can be more meaningful in certain contexts.
-
-By using enums effectively, you can make your TypeScript code more organized, readable, and maintainable.
 
 ### enum data types in TypeScript:
 
@@ -616,3 +542,107 @@ console.log(color); // Output: 0
 - **Best Practices:** Consider using enums for values that have a limited set of possibilities and are related to each other. Avoid using enums for values that are not closely related or that can have a wide range of values.
 
 By understanding these concepts and best practices, you can effectively use enum data types in your TypeScript code to improve its organization, readability, and maintainability.
+
+## Object Data Type in TypeScript
+
+**Objects** in TypeScript are collections of key-value pairs. Each key is a string, and each value can be of any type. Objects are used to represent complex data structures and encapsulate related data and behavior.
+
+**Syntax:**
+
+```typescript
+let objectName: {
+  property1: Type1;
+  property2: Type2;
+  // ...
+} = {
+  property1: value1,
+  property2: value2,
+  // ...
+};
+```
+
+where:
+
+- `objectName`: The name of the object.
+- `property1`, `property2`, ...: The names of the properties.
+- `Type1`, `Type2`, ...: The types of the corresponding properties.
+- `value1`, `value2`, ...: The initial values of the properties.
+
+**Example:**
+
+```typescript
+let person: {
+  name: string;
+  age: number;
+  isStudent: boolean;
+} = {
+  name: "Alice",
+  age: 30,
+  isStudent: true
+};
+```
+
+In this example, `person` is an object with three properties: `name`, `age`, and `isStudent`.
+
+**Accessing Properties:**
+
+You can access properties of an object using dot notation or bracket notation:
+
+```typescript
+console.log(person.name); // Output: "Alice"
+console.log(person["age"]); // Output: 30
+```
+
+**Modifying Properties:**
+
+You can modify properties of an object by assigning new values to them:
+
+```typescript
+person.age = 31;
+console.log(person.age); // Output: 31
+```
+
+**Adding Properties:**
+
+You can add new properties to an object at any time:
+
+```typescript
+person.city = "New York";
+console.log(person.city); // Output: "New York"
+```
+
+**Deleting Properties:**
+
+You can delete properties from an object using the `delete` operator:
+
+```typescript
+delete person.isStudent;
+console.log(person.isStudent); // Output: undefined
+```
+
+**Key Points:**
+
+- Objects are used to represent complex data structures in TypeScript.
+- Properties of objects can be accessed and modified using dot notation or bracket notation.
+- You can add or delete properties from objects at any time.
+
+**Example with methods:**
+
+```typescript
+let person: {
+  name: string;
+  age: number;
+  greet: () => void;
+} = {
+  name: "Bob",
+  age: 25,
+  greet: function() {
+    console.log("Hello, my name is " + this.name);
+  }
+};
+
+person.greet(); // Output: "Hello, my name is Bob"
+```
+
+In this example, the `person` object has a method named `greet` that logs a message to the console.
+
