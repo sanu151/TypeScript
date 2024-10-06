@@ -941,3 +941,62 @@ In this example, `Animal` is an abstract class that defines an abstract method `
 - You can use the `abstract` keyword to declare both abstract classes and abstract methods.
 
 By understanding abstract classes, you can leverage their benefits to create well-structured, maintainable, and reusable TypeScript code.
+
+## Encapsulation and Access Modifiers
+
+**Encapsulation** is a fundamental principle in object-oriented programming that involves bundling data and the methods that operate on that data together within a class. This helps to protect data from unauthorized access and modification.
+
+**Access Modifiers** are keywords used to control the visibility of class members (properties and methods) within other parts of the code. TypeScript supports three access modifiers:
+
+1. **`public`:** Members declared as `public` are accessible from anywhere within the class, its subclasses, and other parts of the code. This is the default access modifier if none is specified.
+2. **`private`:** Members declared as `private` are only accessible within the class itself. They cannot be accessed from outside the class.
+3. **`protected`:** Members declared as `protected` are accessible within the class itself and its subclasses. They cannot be accessed from other parts of the code.
+
+**Example:**
+
+```typescript
+class Person {
+  public name: string;
+  private age: number;
+  protected address: string;
+
+  constructor(name: string, age: number, address: string) {
+    this.name = name;
+    this.age = age;
+    this.address = address;
+  }
+
+  public greet() {
+    console.log("Hello, my name is " + this.name);
+  }
+
+  private calculateAge() {
+    // Some logic to calculate age
+  }
+
+  protected updateAddress(newAddress: string) {
+    this.address = newAddress;
+  }
+}
+```
+
+In this example:
+
+- `name` is public, so it can be accessed and modified from anywhere.
+- `age` is private, so it can only be accessed and modified within the `Person` class.
+- `address` is protected, so it can be accessed and modified within the `Person` class and its subclasses.
+
+**Benefits of Encapsulation:**
+
+- **Data Hiding:** Encapsulation hides the internal implementation details of a class from the outside world, making the code more modular and easier to maintain.
+- **Code Security:** By controlling access to class members, encapsulation can help prevent unauthorized modifications and improve code security.
+- **Code Reusability:** Encapsulated classes can be reused in different parts of your application without worrying about unintended side effects.
+
+**Best Practices:**
+
+- Use `private` for members that should only be accessed within the class.
+- Use `protected` for members that should be accessible within the class and its subclasses.
+- Use `public` for members that need to be accessible from outside the class.
+- Avoid exposing too many public members to reduce the complexity of your class.
+
+By effectively using encapsulation and access modifiers, you can write more organized, maintainable, and secure TypeScript code.
