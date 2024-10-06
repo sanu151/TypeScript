@@ -810,3 +810,65 @@ person2.greet(); // Output: "Hello, my name is Bob"
 - Classes can implement interfaces to define contracts for their behavior.
 
 By understanding classes and objects, you can create well-structured and maintainable TypeScript applications.
+
+## Inheritance
+
+**Inheritance** is a fundamental concept in object-oriented programming that allows you to create new classes based on existing classes. This promotes code reusability and creates a hierarchical relationship between classes.
+
+**Syntax:**
+
+```typescript
+class ChildClass extends ParentClass {
+  // Properties and methods specific to ChildClass
+}
+```
+
+where:
+
+- `ChildClass`: The name of the child class.
+- `ParentClass`: The name of the parent class.
+
+**Example:**
+
+```typescript
+class Animal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log("Generic animal sound");
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log("Woof!");
+  }
+}
+
+class Cat extends Animal {
+  meow() {
+    console.log("Meow!");
+  }
+}
+```
+
+In this example, `Dog` and `Cat` are child classes of `Animal`. They inherit the `name` property and `speak()` method from `Animal`, but they also have their own specific methods (`bark()` and `meow()`).
+
+**Key Points:**
+
+- Child classes inherit all properties and methods from their parent class.
+- Child classes can override methods defined in the parent class.
+- Child classes can have their own unique properties and methods.
+- Inheritance promotes code reusability and creates a hierarchical structure.
+
+**Additional Considerations:**
+
+- TypeScript supports multiple inheritance through interfaces.
+- You can use the `super` keyword to call methods or access properties of the parent class from within a child class.
+- Inheritance can be a powerful tool for modeling complex relationships between objects. However, it's important to use it judiciously to avoid creating overly complex hierarchies.
+
+By understanding inheritance, you can create well-structured and maintainable TypeScript applications.
