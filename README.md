@@ -872,3 +872,72 @@ In this example, `Dog` and `Cat` are child classes of `Animal`. They inherit the
 - Inheritance can be a powerful tool for modeling complex relationships between objects. However, it's important to use it judiciously to avoid creating overly complex hierarchies.
 
 By understanding inheritance, you can create well-structured and maintainable TypeScript applications.
+
+
+**Abstract Classes:**
+
+- Abstract classes are classes that cannot be instantiated directly.
+- They serve as blueprints for other classes, defining common properties and methods that derived classes must implement.
+- Abstract classes can contain abstract methods, which are methods that have no implementation and must be overridden by derived classes.
+
+**Syntax:**
+
+```typescript
+abstract class AbstractClassName {
+  // Abstract properties (optional)
+  abstract property1: Type1;
+
+  // Abstract methods
+  abstract method1(): ReturnType;
+
+  // Concrete properties and methods
+  property2: Type2;
+  method2(): void {
+    // Implementation
+  }
+}
+```
+
+**Example:**
+
+```typescript
+abstract class Animal {
+  abstract makeSound(): void;
+}
+
+class Dog extends Animal {
+  makeSound() {
+    console.log("Woof!");
+  }
+}
+
+class Cat extends Animal {
+  makeSound() {
+    console.log("Meow!");
+  }
+}
+```
+
+In this example, `Animal` is an abstract class that defines an abstract method `makeSound()`. Derived classes like `Dog` and `Cat` must implement this method.
+
+**Key Points:**
+
+- Abstract classes cannot be instantiated directly.
+- Abstract methods must be overridden by derived classes.
+- Abstract classes are often used to define common interfaces or behaviors for related classes.
+- Abstract classes can have both abstract and concrete members.
+
+**Benefits of Abstract Classes:**
+
+- **Enforce common interfaces:** Abstract classes ensure that derived classes adhere to a common contract.
+- **Promote code reusability:** By defining common properties and methods in abstract classes, you can avoid code duplication.
+- **Improve code organization:** Abstract classes can help organize your code into a hierarchical structure.
+- **Enable polymorphism:** Abstract classes can be used to achieve polymorphism, where objects of different types can be treated as if they were of the same type.
+
+**Additional Considerations:**
+
+- Abstract classes can be used in conjunction with interfaces to create more flexible and modular designs.
+- Abstract classes can be extended by other abstract classes or concrete classes.
+- You can use the `abstract` keyword to declare both abstract classes and abstract methods.
+
+By understanding abstract classes, you can leverage their benefits to create well-structured, maintainable, and reusable TypeScript code.
