@@ -811,7 +811,7 @@ person2.greet(); // Output: "Hello, my name is Bob"
 
 By understanding classes and objects, you can create well-structured and maintainable TypeScript applications.
 
-## Inheritance
+**Inheritance**
 
 **Inheritance** is a fundamental concept in object-oriented programming that allows you to create new classes based on existing classes. This promotes code reusability and creates a hierarchical relationship between classes.
 
@@ -942,7 +942,7 @@ In this example, `Animal` is an abstract class that defines an abstract method `
 
 By understanding abstract classes, you can leverage their benefits to create well-structured, maintainable, and reusable TypeScript code.
 
-## Encapsulation and Access Modifiers
+**Encapsulation and Access Modifiers**
 
 **Encapsulation** is a fundamental principle in object-oriented programming that involves bundling data and the methods that operate on that data together within a class. This helps to protect data from unauthorized access and modification.
 
@@ -1001,3 +1001,102 @@ In this example:
 - Avoid exposing too many public members to reduce the complexity of your class.
 
 By effectively using encapsulation and access modifiers, you can write more organized, maintainable, and secure TypeScript code.
+
+### Modules in TypeScript
+
+Modules in TypeScript provide a way to organize code into separate files and import/export functionality between them. This promotes code reusability, modularity, and better organization.
+
+**Module Export:**
+
+- Modules in TypeScript are self-contained units of code that can be organized into separate files.
+- You can export members (variables, functions, classes, interfaces) from a module using the `export` keyword.
+
+**Syntax:**
+
+```typescript
+// Exporting a variable
+export let variableName = value;
+
+// Exporting a function
+export function functionName(parameters): ReturnType {
+  // Function body
+}
+
+// Exporting a class
+export class ClassName {
+  // Class members
+}
+
+// Exporting an interface
+export interface InterfaceName {
+  // Interface members
+}
+```
+
+**Example:**
+
+```typescript
+// myModule.ts
+export let pi = 3.14159;
+
+export function greet(name: string) {
+  console.log("Hello, " + name);
+}
+```
+
+**Module Import:**
+
+- To use members from another module, you need to import them into your current module.
+- You can import members using the `import` keyword.
+
+**Syntax:**
+
+```typescript
+import { member1, member2, ... } from 'moduleName';
+```
+
+where:
+
+- `member1`, `member2`, ...: The names of the members you want to import.
+- `moduleName`: The name or path of the module.
+
+**Example:**
+
+```typescript
+import { pi, greet } from './myModule';
+
+console.log(pi);
+greet("Alice");
+```
+
+**Default Exports:**
+
+- A module can have a default export, which is the primary export of the module.
+- You can import the default export using the following syntax:
+
+```typescript
+import defaultMember from 'moduleName';
+```
+
+**Example:**
+
+```typescript
+// myModule.ts
+export default function getDefaultMessage() {
+  return "Hello, world!";
+}
+
+// Importing the default export
+import getMessage from './myModule';
+
+console.log(getMessage());
+```
+
+**Key Points:**
+
+- Modules help organize your code into smaller, more manageable units.
+- The `export` keyword is used to make members accessible from other modules.
+- The `import` keyword is used to import members from other modules.
+- You can use default exports to specify the primary export of a module.
+
+By understanding module export and import, you can effectively organize your TypeScript code and promote code reusability.
