@@ -1162,6 +1162,8 @@ project-directory/
 - **`tsconfig.json`:** The TypeScript configuration file.
 - **`package.json`:** The project metadata file.
 
+**`tsconfig` reference** : https://www.typescriptlang.org/tsconfig/
+
 **Best Practices:**
 
 - Organize your code into well-structured directories and files.
