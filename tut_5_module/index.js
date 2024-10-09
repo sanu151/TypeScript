@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Student_1 = require("./Student");
+var Users_1 = require("./Users");
+var user1 = new Users_1.Uses("Supriyo Das", 36);
+var student1 = new Student_1.Students("Rupa Das", 26, 10123);
+console.log("User Object : ");
+user1.display();
+console.log("_________________");
+console.log("Student Object : ");
+student1.display1();
