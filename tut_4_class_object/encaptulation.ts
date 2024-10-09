@@ -1,4 +1,4 @@
-// Access Modifires : public, protected, private
+// Access Modifires : public, protected, private, readonly
 
 class Users {
   public userName: string; //userName is public, so it can be accessed and modified from anywhere.
@@ -17,22 +17,40 @@ class Users {
 
 class Students extends Users {
   private studentId: number; //studentId is private, so it can only be accessed and modified within the Students class.
+  readonly program: string; // program is readonly, so it cannot be modified after initialized. Once a readonly property is assigned a value, it cannot be changed.
 
-  constructor(userName: string, age: number, studentId: number) {
+  constructor(
+    userName: string,
+    age: number,
+    studentId: number,
+    program: string
+  ) {
     super(userName, age);
     this.studentId = studentId;
+    this.program = program;
   }
 
   display1(): void {
     this.display();
     console.log(`ID : ${this.studentId}`);
+    console.log(`Program : ${this.program}`);
+  }
+
+  // set and get private properties from outside the class we need to create a public method
+  setStudentId(studentId: number): void {
+    this.studentId = studentId;
+  }
+
+  getStudentId(): number {
+    return this.studentId;
   }
 }
 
 let user1 = new Users("Supriyo", 36);
 user1.userName = "Sanu";
-
-let student1 = new Students("Rupa Das", 26, 1234);
-
 user1.display();
+
+let student1 = new Students("Rupa Das", 26, 1234, "BCA");
 student1.display1();
+student1.setStudentId(4321);
+console.log(student1.getStudentId());
