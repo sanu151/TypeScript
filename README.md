@@ -951,6 +951,7 @@ By understanding abstract classes, you can leverage their benefits to create wel
 1. **`public`:** Members declared as `public` are accessible from anywhere within the class, its subclasses, and other parts of the code. This is the default access modifier if none is specified.
 2. **`private`:** Members declared as `private` are only accessible within the class itself. They cannot be accessed from outside the class.
 3. **`protected`:** Members declared as `protected` are accessible within the class itself and its subclasses. They cannot be accessed from other parts of the code.
+4. **`readonly` :** Members declared as `readonly` cannot be modified after they are initialized. Once a readonly property is assigned a value, it cannot be changed.
 
 **Example:**
 
