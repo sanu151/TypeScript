@@ -1100,3 +1100,98 @@ console.log(getMessage());
 - You can use default exports to specify the primary export of a module.
 
 By understanding module export and import, you can effectively organize your TypeScript code and promote code reusability.
+
+### `tsconfig.json` and file structure in TypeScript:
+
+**`tsconfig.json`:**
+
+- `tsconfig.json` is a configuration file that specifies compiler options for your TypeScript project.
+- It is optional but highly recommended, as it allows you to customize the compilation process without modifying your TypeScript code.
+- You can create a `tsconfig.json` file in the root directory of your project.
+
+**Key Configuration Options:**
+
+- **`target`:** Specifies the target ECMAScript version for compilation.
+- **`module`:** Specifies the module system (e.g., CommonJS, AMD, ES Modules).
+- **`outFile`:** Specifies the output file for the compiled JavaScript code.
+- **`outDir`:** Specifies the output directory for the compiled JavaScript files.
+- **`rootDir`:** Specifies the root directory of your project.
+- **`sourceMap`:** Enables or disables source maps for debugging.
+- **`declaration`:** Enables or disables the generation of declaration files (.d.ts).
+- **`strict`:** Enables a stricter mode with additional type checks.
+- **`noImplicitAny`:** Disallows implicit any types.
+- **`esModuleInterop`:** Enables interoperability between ES Modules and CommonJS modules.
+- **`skipLibCheck`:** Skips type checking for library files.
+
+**Example `tsconfig.json`:**
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true
+  }
+}
+```
+
+**File Structure:**
+
+A typical TypeScript project structure might look like this:
+
+```
+project-directory/
+├── src/
+│   ├── index.ts
+│   ├── models/
+│   │   ├── User.ts
+│   │   └── Product.ts
+│   └── utils/
+│       └── helpers.ts
+├── tsconfig.json
+└── package.json
+```
+
+- **`src/`:** The source code directory, containing your TypeScript files.
+- **`index.ts`:** The main entry point of your application.
+- **`models/`:** A directory for model classes.
+- **`utils/`:** A directory for utility functions.
+- **`tsconfig.json`:** The TypeScript configuration file.
+- **`package.json`:** The project metadata file.
+
+**`tsconfig` reference** : https://www.typescriptlang.org/tsconfig/
+
+**tsconfig by Anisul Islam**
+
+* create src, public folder  
+* Inside public folder create index.html, style.css and inside src folder create index.ts or other ts files  
+* in terminal -> tsc --init  
+* edit tsconfig.json as shown in the following example
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./public",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["./src"],
+  "files": ["./src/index.ts", "./src/app.ts"]
+}
+```
+* run the compiler: tsc  
+
+**Best Practices:**
+
+- Organize your code into well-structured directories and files.
+- Use meaningful file and directory names.
+- Consider using a linter like ESLint to enforce code quality standards.
+- Use a build tool like Webpack or Parcel to manage your TypeScript code, dependencies, and other assets.
+
+By effectively using `tsconfig.json` and following good file structure practices, you can improve the organization, maintainability, and build process of your TypeScript projects.
