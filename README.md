@@ -1251,3 +1251,55 @@ button.addEventListener('click', () => {
 - Consider using a CSS preprocessor like Sass or Less for styling your elements.
 
 By understanding these concepts and best practices, you can effectively manipulate the DOM using TypeScript to create dynamic and interactive web applications.
+
+**Function Signatures in TypeScript**
+
+A function signature in TypeScript defines the structure of a function, including its name, parameters, and return type. It provides a contract for how the function should be used, making your code more readable, maintainable, and type-safe.
+
+**Syntax:**
+
+```typescript
+function functionName(parameter1: Type1, parameter2: Type2, ...): ReturnType {
+  // Function body
+}
+```
+
+where:
+
+- `functionName`: The name of the function.
+- `parameter1`, `parameter2`, ...: The parameters of the function, along with their types.
+- `ReturnType`: The type of the value returned by the function (optional).
+
+**Example:**
+
+```typescript
+function greet(name: string): void {
+  console.log("Hello, " + name);
+}
+```
+
+In this example, the function signature for `greet` specifies that it takes a string parameter named `name` and returns no value (`void`).
+
+**Key Points:**
+
+- Function signatures are essential for type safety in TypeScript. They help prevent type errors by ensuring that arguments passed to functions have the correct types.
+- Function signatures can be used to define the contract for functions, making your code more readable and understandable.
+- You can use optional parameters, default parameters, and rest parameters in function signatures.
+
+**Example with optional and default parameters:**
+
+```typescript
+function add(a: number, b: number = 0): number {
+  return a + b;
+}
+```
+
+**Example with rest parameters:**
+
+```typescript
+function sum(...numbers: number[]): number {
+  return numbers.reduce((acc, val) => acc + val, 0);
+}
+```
+
+By using function signatures effectively, you can write more robust, maintainable, and type-safe TypeScript code.
