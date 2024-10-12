@@ -1252,7 +1252,7 @@ button.addEventListener('click', () => {
 
 By understanding these concepts and best practices, you can effectively manipulate the DOM using TypeScript to create dynamic and interactive web applications.
 
-**Function Signatures in TypeScript**
+### Function Signatures in TypeScript
 
 A function signature in TypeScript defines the structure of a function, including its name, parameters, and return type. It provides a contract for how the function should be used, making your code more readable, maintainable, and type-safe.
 
