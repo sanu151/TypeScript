@@ -1,11 +1,14 @@
+// Create Interface
 interface User {
   name: string;
   age: number;
   gender: string;
 }
 
+// interface User type Array
 const users: User[] = [];
 
+// User type Object
 const user1: User = {
   name: "Supriyo Das",
   age: 37,
@@ -21,6 +24,7 @@ const user2: User = {
 users.push(user1);
 users.push(user2);
 
+// function with User type Parameter
 const printUserInfo = (user: User) => {
   console.log(`Name: ${user.name}`);
   console.log(`Age: ${user.age}`);
