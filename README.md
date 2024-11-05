@@ -4,6 +4,7 @@
 
 ![image](https://github.com/user-attachments/assets/96925d53-3545-41f6-839e-5a17f4384582)
 
+### TypeScript Cheat Sheet : [https://www.sitepen.com/blog/typescript-cheat-sheet](https://www.sitepen.com/blog/typescript-cheat-sheet)
 
 ## Introduction to TypeScript: A Superset of JavaScript
 
